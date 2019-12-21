@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="Mud" package="com.sample.Mud" version="1.0.0" company="Company Name" />
+	<app main="Main" path="bin" file="Mud" />
+	<source path="src" />
+	<haxelib name="openfl" />
+	<haxelib name="hscript"/>
+	<!--<assets path="assets"/>-->
+</project>
