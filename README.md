@@ -1,3 +1,4 @@
-# MUD - Multi UI Development
+# Agile
 Declarative
-Live reload
+Hot reload
+User interface
