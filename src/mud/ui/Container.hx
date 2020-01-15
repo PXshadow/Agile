@@ -5,16 +5,17 @@ import openfl.display.DisplayObject;
 
 class Container extends Sprite
 {
-    
+    var list:Array<Object> = [];
     public function new()
     {
         super();
 
     }
-    private function add(object:DisplayObject)
+    private function add(object:Object)
     {
         object.y = height;
         addChild(object);
+        list.push(object);
         center();
     }
     private function center()

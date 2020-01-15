@@ -21,11 +21,9 @@ class View extends Container
     }
     public function clear()
     {
-        var object:Object;
-        for (i in 0...numChildren)
+        for (obj in list)
         {
-            object = cast getChildAt(i);
-            object.remove();
+            obj.remove();
         }
     }
     public function Button(main:Void->Void=null):Button

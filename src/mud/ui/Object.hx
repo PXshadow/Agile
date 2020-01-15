@@ -4,6 +4,7 @@ import openfl.display.DisplayObject;
 
 class Object
 {
+    public var elements:Array<DisplayObject> = [];
     public function new()
     {
 
