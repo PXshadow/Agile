@@ -18,7 +18,7 @@ class Compile
     var view:View;
     public function new(src:String,main:String,view:View)
     {
-        this.src = src + "/";
+        this.src = src;
         this.main = main;
         this.view = view;
         directory();
@@ -27,6 +27,10 @@ class Compile
         parser = new Parser();
         parser.allowTypes = true;
         interp = new Interp();
+        interp.variables.set("trace",Sys.print);
+
+        interp.variables.set("Color",mud.ui.Color);
+
         interp.variables.set("Text",view.Text);
         interp.variables.set("Button",view.Button);
 
@@ -41,8 +45,11 @@ class Compile
     }
     private function execute()
     {
+        //unminimize
+        view.stage.window.minimized = false;
+        trace("minimized " + view.stage.window.minimized);
         //remove past
-        view.removeChildren();
+        view.clear();
         //retrieve data
         data = File.getContent(dir + src + "/" + main);
         var re = data.indexOf("return;") + 7;
@@ -54,7 +61,7 @@ class Compile
             interp.execute(parser.parseString(data));
         }catch(e:Dynamic)
         {
-
+            trace("execture: " + e);
         }
     }
     private function previous():String
@@ -63,12 +70,8 @@ class Compile
     }
     private function directory()
     {
-        #if (windows || !openfl)
-        dir = "";
-        #else
         dir = Path.normalize(lime.system.System.applicationDirectory);
         dir = Path.removeTrailingSlashes(dir) + "/";
-        #end
         #if mac
         dir = dir.substring(0,dir.indexOf("/Contents/Resources/"));
         dir = dir.substring(0,dir.lastIndexOf("/") + 1);
