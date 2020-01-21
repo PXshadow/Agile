@@ -1,9 +1,9 @@
-package mud.ui;
+package agile.ui;
 
 import openfl.display.DisplayObject;
 import openfl.display.Sprite;
 
-class Button extends Object
+class Button extends Sprite
 {
     public var click:Void->Void;
     public var down:Void->Void;
@@ -15,16 +15,6 @@ class Button extends Object
     public function new()
     {
         super();
-    }
-    override public function remove()
-    {
-        super.remove();
-        @:privateAccess sprite.__removeAllListeners();
-        if (sprite.parent != null) sprite.parent.removeChild(sprite);
-    }
-    override function add():DisplayObject
-    {
-        return sprite;
     }
     public function background(color:UInt):Button
     {

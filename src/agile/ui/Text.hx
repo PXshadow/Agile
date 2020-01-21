@@ -1,11 +1,12 @@
-package mud.ui;
+package agile.ui;
 
+import openfl.display.DisplayObjectContainer;
 import openfl.display.DisplayObject;
 import openfl.text.TextFormatAlign;
 import openfl.text.TextFormat;
 import openfl.text.TextField;
 
-class Text extends Object
+class Text extends DisplayObjectContainer
 {
     var textfield:TextField;
     var _font:String = "assets/font/Roboto-";
@@ -30,13 +31,7 @@ class Text extends Object
         buildFont();
         //textfield.htmlText = text;
         setHeight();
-        resize();
-    }
-    override function resize() 
-    {
-        super.resize();
-        if (textfield.parent == null) return;
-        
+        addChild(textfield);
     }
     private function buildFormat()
     {
@@ -56,16 +51,6 @@ class Text extends Object
         if (_italic) string += "Italic";
         string += _ext;
         _fontName = openfl.Assets.getFont(string).fontName;
-    }
-    override function add():DisplayObject 
-    {
-        return textfield;
-    }
-    override public function remove()
-    {
-        super.remove();
-        @:privateAccess textfield.__removeAllListeners();
-        if (textfield.parent != null) textfield.parent.removeChild(textfield);
     }
     private function setHeight()
     {

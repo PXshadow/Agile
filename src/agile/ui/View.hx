@@ -1,4 +1,4 @@
-package mud.ui;
+package agile.ui;
 
 import openfl.events.Event;
 import openfl.display.DisplayObject;
@@ -8,7 +8,6 @@ import hscript.Parser;
 
 class View extends Container
 {
-    
     public function new()
     {
         super();
@@ -21,22 +20,19 @@ class View extends Container
     }
     public function clear()
     {
-        for (obj in list)
-        {
-            obj.remove();
-        }
+        removeChildren();
     }
     public function Button(main:Void->Void=null):Button
     {
         var button = new Button();
         button.main = main;
-        add(button.add());
+        add(button);
         return button;
     }
     public function Text(string:String=""):Text
     {
         var text = new Text(string);
-        @:privateAccess add(text.textfield);
+        add(text);
         return text;
     }
     public function List(array:Array<DisplayObject>):List

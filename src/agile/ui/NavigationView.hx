@@ -1,4 +1,4 @@
-package ui;
+package agile.ui;
 
 class NagivationView
 {

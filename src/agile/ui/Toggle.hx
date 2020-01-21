@@ -1,4 +1,4 @@
-package mud.ui;
+package agile.ui;
 
 class Toggle extends Button
 {

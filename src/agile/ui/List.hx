@@ -1,7 +1,6 @@
-package mud.ui;
+package agile.ui;
 
 import openfl.display.DisplayObject;
-
 class List extends Container
 {
     var array:Array<DisplayObject>;

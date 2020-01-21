@@ -1,5 +1,5 @@
-package mud.compiler;
-import mud.ui.View;
+package agile.compiler;
+import agile.ui.View;
 import lime.system.FileWatcher;
 import sys.FileSystem;
 import sys.io.File;
@@ -29,7 +29,7 @@ class Compile
         interp = new Interp();
         interp.variables.set("trace",Sys.print);
 
-        interp.variables.set("Color",mud.ui.Color);
+        interp.variables.set("Color",agile.ui.Color);
 
         interp.variables.set("Text",view.Text);
         interp.variables.set("Button",view.Button);
