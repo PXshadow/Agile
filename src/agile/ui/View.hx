@@ -5,18 +5,17 @@ import openfl.display.DisplayObject;
 import openfl.display.Sprite;
 import hscript.Interp;
 import hscript.Parser;
+import agile.compiler.Compile;
 
 class View extends Container
 {
-    public function new(hotReload:Bool=false)
+    var compile:Compile;
+    public function new()
     {
         super();
-        if (hotReload)
-        {
-            
-        }
         stage.addEventListener(Event.RESIZE,resize);
         center();
+        compile = new Compile(this);
     }
     private function resize(_)
     {

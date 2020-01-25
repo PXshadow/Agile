@@ -51,6 +51,7 @@ class Text extends DisplayObjectContainer
         if (_italic) string += "Italic";
         string += _ext;
         _fontName = openfl.Assets.getFont(string).fontName;
+        buildFormat();
     }
     private function setHeight()
     {
@@ -63,12 +64,14 @@ class Text extends DisplayObjectContainer
     }
     public function color(int:UInt):Text
     {
-        textfield.defaultTextFormat.color = int;
+        _color = int;
+        buildFormat();
         return this;
     }
     public function bold(bool:Bool=true):Text
     {
         _type = 0;
+        buildFont();
         return this;
     }
     public function medium(bool:Bool=true):Text
