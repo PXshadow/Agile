@@ -8,9 +8,13 @@ import hscript.Parser;
 
 class View extends Container
 {
-    public function new()
+    public function new(hotReload:Bool=false)
     {
         super();
+        if (hotReload)
+        {
+            
+        }
         stage.addEventListener(Event.RESIZE,resize);
         center();
     }

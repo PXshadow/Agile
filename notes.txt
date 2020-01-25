@@ -1,3 +1,10 @@
-grids
-text binding
-compiler errors are confusing
+Improvements on swift ui:
+-grids
+-text binding
+-compiler errors are confusing
+
+links:
+https://fuckingswiftui.com/
+https://getbootstrap.com/docs/4.4/components/alerts/
+
+

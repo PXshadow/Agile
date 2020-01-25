@@ -3,10 +3,8 @@ class Main extends agile.ui.View
 {
     public function new()
     {
-        super();
-        new agile.compiler.Compile("src","Main.hx",this);
-        return;
+        super(true);
         //hello world
-        for (i in 0...10) Text("I am down").color(Color.GREEN);
+        for (i in 0...6) Text("I am down").color(Color.GREEN);
     }
 }
